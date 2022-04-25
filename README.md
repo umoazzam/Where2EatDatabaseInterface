@@ -1,6 +1,8 @@
 # Where2Eat: Restaurant Database for Group Dining
 
 Authors: Sohan Bhawtankar, Raunak Bhimsaria, Usman Moazzam
+Course: CSDS 341
+Professor: Dr. Orhan Ozguner
 
 ## Application Background
 
