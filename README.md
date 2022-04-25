@@ -2,7 +2,7 @@
 
 Authors: Sohan Bhawtankar, Raunak Bhimsaria, Usman Moazzam
 
-Course: CSDS 341
+Course: CSDS 341: Introduction to Databases
 
 Professor: Dr. Orhan Ozguner
 
