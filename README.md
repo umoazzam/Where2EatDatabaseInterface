@@ -2,6 +2,10 @@
 
 Authors: Sohan Bhawtankar, Raunak Bhimsaria, Usman Moazzam
 
+Course: CSDS 341: Introduction to Databases
+
+Professor: Dr. Orhan Ozguner
+
 ## Application Background
 
 Indecision amongst friends on where to eat is an age-old adage that plagues most groups in the 21st century. With hundreds of restaurants to choose from, all of varying distances from each person, different cuisine, different rating, and different price, the first-world problem is an easy one to understand. This is an issue that becomes even more difficult the longer a friend group has been in one area, as it's difficult to branch out and find new dining locations once a group of individuals has found a small few that work for everyone in the group to a satisfactory extent.
