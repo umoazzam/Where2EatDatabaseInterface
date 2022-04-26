@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `where2eat` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `where2eat`;
 -- MySQL dump 10.13  Distrib 8.0.28, for macos11 (x86_64)
 --
 -- Host: localhost    Database: where2eat
@@ -18,13 +16,13 @@ USE `where2eat`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `group`
+-- Table structure for table `Community`
 --
 
-DROP TABLE IF EXISTS `group`;
+DROP TABLE IF EXISTS `Community`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `group` (
+CREATE TABLE `Community` (
   `groupID` int NOT NULL,
   `type` char(30) COLLATE utf8_bin DEFAULT NULL,
   `min_budget` int DEFAULT NULL,
@@ -36,13 +34,13 @@ CREATE TABLE `group` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `group`
+-- Dumping data for table `Community`
 --
 
-LOCK TABLES `group` WRITE;
-/*!40000 ALTER TABLE `group` DISABLE KEYS */;
-INSERT INTO `group` VALUES (0,'undecided',1,'Afghan',-100.689837,22.41631667),(1,'family',1,'Fast_Food',-100.1472627,21.98263991),(2,'family',1,'American',-100.3371721,22.038526),(3,'family',1,'American',-100.9760887,22.14610233),(4,'family',1,'American',-100.5982068,22.4827592),(5,'family',1,'American',-100.3623483,21.874691),(6,'friends',1,'Pizzeria',-99.76025389,21.07489044),(7,'friends',1,'Regional',-99.8863172,22.142537),(8,'friends',1,'Contemporary',-100.257679,21.8243338),(9,'friends',1,'Mexican',-100.0025769,21.71941887);
-/*!40000 ALTER TABLE `group` ENABLE KEYS */;
+LOCK TABLES `Community` WRITE;
+/*!40000 ALTER TABLE `Community` DISABLE KEYS */;
+INSERT INTO `Community` VALUES (0,'undecided',1,'Afghan',-100.689837,22.41631667),(1,'family',1,'Fast_Food',-100.1472627,21.98263991),(2,'family',1,'American',-100.3371721,22.038526),(3,'family',1,'American',-100.9760887,22.14610233),(4,'family',1,'American',-100.5982068,22.4827592),(5,'family',1,'American',-100.3623483,21.874691),(6,'friends',1,'Pizzeria',-99.76025389,21.07489044),(7,'friends',1,'Regional',-99.8863172,22.142537),(8,'friends',1,'Contemporary',-100.257679,21.8243338),(9,'friends',1,'Mexican',-100.0025769,21.71941887);
+/*!40000 ALTER TABLE `Community` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -252,4 +250,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-26 13:16:30
+-- Dump completed on 2022-04-26 14:05:59
