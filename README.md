@@ -74,19 +74,21 @@ This relation keeps track of what users are part of which group. This is a many 
 
 ### Usman Moazzam
 
-Application Background
-ER Diagram
-Project Ideation
-SQL Database Organization
+* Project Ideation: ideated project problem and concept, presented to the group for approval
+* Application Background: wrote/conceived application background section
+* ER Diagram: created diagram of general structure of database, ideated general schema
+* SQL Database Server/DB Organization: hosted/configured server and created/structured database using MySQLWorkbench (created all tables/connections)
+* Python-MySQL Integration: facilitated connection between Python and MySQL
+* Python Interaction Script: wrote script to generate queries and send them to the database server
 
 ### Sohan Bhawtanker
 
-Example SQL Queries
-Python scripts for CSV/Entity generation
-Add more here
+* Example SQL Queries
+* Python scripts for CSV/Entity generation
+* Add more here
 
 ### Raunak Bhimsaria
 
-Example SQL Queries
-Python scripts for CSV/Entity generation
-Add more here
+* Example SQL Queries
+* Python scripts for CSV/Entity generation
+* Add more here
