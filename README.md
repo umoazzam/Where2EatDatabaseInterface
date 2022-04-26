@@ -12,15 +12,15 @@ Indecision amongst friends on where to eat is an age-old adage that plagues most
 
 Despite the complexity of the challenge, bringing together a group of friends at a dining location befitting all of their tastes, budgets and locations becomes easier with the use of a database. Where2Eat utilizes a database to allow users to organize their dining profiles, compare dining experiences with individuals in their constructed groups (work, family, friends, other social groups), and then receive a list of restaurants for them to try based on their collective wants and needs in a dining location. Overall, this system should assist its users and groups in exploring the dining experiences in their area without the risk of restaurants failing to meet their needs, as well as helping them make the essential yet impossible decision: where to eat?
 
-## Data Description
+## Data Description (Raunak)
 
-## ER Diagram
+## ER Diagram (Usman)
 
-## Functional Dependencies
+## Functional Dependencies (Sohan)
 
 ## Schemas
 
-### Entities
+### Entities (Sohan)
 
 ```
 User(user_id: INT, name: CHAR, age: INT, neighborhood: CHAR, phone_num: CHAR, fave_foods{CHAR}: CHAR, cuisines{CHAR}: CHAR, budget: INT, drink_lvl: CHAR, curiosity: INT)
@@ -55,7 +55,7 @@ ForeignKey(restaurant_id) references Restaurant.restaurant_id
 
 This table stores reviews of a user. Every user may have multiple reviews of different restaurants. These reviews include the date they were written, rating, and a written section for a specific review. 
 
-### Relations
+### Relations (Raunak)
 
 ```
 Member_of(user_id, group_id)
@@ -66,8 +66,27 @@ ForeignKey(group_id) references Groups.group_id
 
 This relation keeps track of what users are part of which group. This is a many to many relationship because each group can have multiple users, and each user can be a part of multiple groups.
 
-## Example Queries
+## Example Queries (Sohan + Raunak)
 
-## Implementation
+## Implementation (Usman)
 
 ## Team Contributions
+
+### Usman Moazzam
+
+Application Background
+ER Diagram
+Project Ideation
+SQL Database Organization
+
+### Sohan Bhawtanker
+
+Example SQL Queries
+Python scripts for CSV/Entity generation
+Add more here
+
+### Raunak Bhimsaria
+
+Example SQL Queries
+Python scripts for CSV/Entity generation
+Add more here
