@@ -75,11 +75,13 @@ This relation keeps track of what users are part of which group. This is a many 
 ### Usman Moazzam
 
 * Project Ideation: ideated project problem and concept, presented to the group for approval
+* Project Management: organized/led meetings, managed milestone progress, and set deadlines
 * Application Background: wrote/conceived application background section
-* ER Diagram: created diagram of general structure of database, ideated general schema
-* SQL Database Server/DB Organization: hosted/configured server and created/structured database using MySQLWorkbench (created all tables/connections)
-* Python-MySQL Integration: facilitated connection between Python and MySQL
+* ER Diagram: created diagram of general structure of database, ideated all general tables/schema
+* SQL Database Server/DB Organization: configured MySQL server and created database using MySQLWorkbench (created all tables/connections)
+* Python-MySQL Integration: facilitated connection between Python and MySQL using MySQL Connector
 * Python Interaction Script: wrote script to generate queries and send them to the database server
+* Demo: organized demonstration to TAs for review
 
 ### Sohan Bhawtanker
 
