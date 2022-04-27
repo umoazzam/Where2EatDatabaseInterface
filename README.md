@@ -1,4 +1,4 @@
-# Where2Eat: Restaurant Database for Group Dining
+# Where2Eat: Restaurant Database for Solo & Group Dining
 
 Authors: Sohan Bhawtankar, Raunak Bhimsaria, Usman Moazzam
 
