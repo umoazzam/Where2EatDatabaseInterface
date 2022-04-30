@@ -87,7 +87,12 @@ This relation keeps track of what users are part of which group. This is a many 
 
 * Example SQL Queries
 * Python scripts for CSV/Entity generation
-* Add more here
+  * Randomized purchase history for each user
+  * Calculated locations of groups
+  * Generated extra tables to prevent lists
+  * Fixed formatting to allow for quick insertion into SQL
+* Writing Schemas
+* Writing Functional Dependencies
 
 ### Raunak Bhimsaria
 
