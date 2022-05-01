@@ -140,7 +140,12 @@ ForeignKey(placeID) references Restaurant.placeID
 #### GroupMembers
 
 ```
-
+`GroupMembers` (
+  `groupID`: int,
+  `userID`: char(30)
+)
+ForeignKey(userID) references User.userID
+ForeignKey(groupID) references Community.groupID
 ```
 
 (SOHAN) Add description
