@@ -19,12 +19,12 @@ Despite the complexity of the challenge, bringing together a group of friends at
 ![Diagram](https://github.com/umoazzam/Where2EatDatabaseInterface/blob/main/Diagrams/where2eatdbER.png)
 
 ## Functional Dependencies (Sohan)
-
+```
 User:\
 userID -> latitude, longitude, smoker, drink_level, dress_preference, ambience, transport, marital_status, birth_year, activity, weight, budget, height
 
 latitude, longitude -> userID
-
+```
 Community:\
 groupID -> type, min_budget, cuisine_overlap, midLong, midLat
 
