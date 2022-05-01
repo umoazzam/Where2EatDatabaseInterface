@@ -81,7 +81,7 @@ Restaurant (
   `area`: char(30)
 ```
 
-This table stores information about every unique restaurant. This includes their menu, budget, type of cuisine and their location. 
+This table stores information about every unique restaurant identified by their placeID. 
 
 
 #### Purchase
@@ -125,7 +125,7 @@ This table stores reviews of a user. Every user may have multiple reviews of dif
 ForeignKey(userID) references User.userID
 ```
 
-(SOHAN) Add description
+This weak entity stores each cuisine a user prefers to eat. 
 
 #### ResCuisine
 
@@ -137,7 +137,7 @@ ForeignKey(userID) references User.userID
 ForeignKey(placeID) references Restaurant.placeID
 ```
 
-(SOHAN) Add description
+This weak entity stores every cuisine a restaurant serves.
 
 #### GroupMembers
 
@@ -150,7 +150,7 @@ ForeignKey(userID) references User.userID
 ForeignKey(groupID) references Community.groupID
 ```
 
-(SOHAN) Add description
+This weak entity stores every member inside a group/community. 
 
 ### Relations (Raunak)
 
