@@ -207,7 +207,10 @@ ORDER BY (AVG(re.rating))DESC LIMIT 5;
 
 ### Relational Algebra
 
-τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
+τ AVG (rating) π r . name, r . address, r . city γ placeid,
+   σ_(u.userid = "U1006" AND u.userid = uc.userid AND r.placeid = rc.placeid AND uc.cuisine = rc.cuisine AND r.placeid = re.placeid)
+    (ρ_(r) restaurant × ρ_(rc) rescuisine × ρ_(u) user × ρ_(uc) usercuisine × ρ_(re) review)
+
 
 ## Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
 ### SQL
@@ -234,7 +237,7 @@ ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 
 ### Relational Algebra
 
-τ COUNT (cuisine) γ userid, σ_(u . userid = uc . userid) (ρ u user × ρ uc usercuisine)
+τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
 
 ## Query 5: Find the most frivolous user (user that has spent the most money)
 ### SQL
