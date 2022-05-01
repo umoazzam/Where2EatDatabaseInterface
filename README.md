@@ -18,30 +18,15 @@ We got our data from the Univeristy of California Irvine Machine-Learning reposi
 
 We wrote python scripts that we ran on the raw data to get the desired data that could be put in our database.
 Our data consists for several csv files namely:
-```
-groupMembers: Contains the userID of the members of all the groups.
-```
-```
-groups: Contains the type (family, friends, or undecided), the minimum budget, the cuisine overlap, and the mean location for all the groups.
-```
-```
-purchases: Contains which user spent how much at which restaurant.
-```
-```
-resCuisine: Contains the cuisines that the restaurant offers.
-```
-```
-restaurants: Contains the location (longitide and latitude), name, address, city, state, what type of alcohol they serve (and whether they don't), smoking restrictions, dress code, accessibilty, price level, ambience, and the type of area (closed or open) of the restaurants.
-```
-```
-reviews: Contains the reviews - overall rating, food rating, and service rating - of the restaurants by the users.
-```
-```
-userCuisine: Contains the preferred cuisines of the users
-```
-```
-users: Contains the location (longitude and latitude), whether they smoke, the drink level, the dress preference, the ambeince preference, the transportation, the marital status, the birth year, the activity (student, professional, or unemployed), the weight, the budget, and the height of the users.
-```
+
+* groupMembers: Contains the userID of the members of all the groups.
+* groups: Contains the type (family, friends, or undecided), the minimum budget, the cuisine overlap, and the mean location for all the groups.
+* purchases: Contains which user spent how much at which restaurant.
+* resCuisine: Contains the cuisines that the restaurant offers.
+* restaurants: Contains the location (longitide and latitude), name, address, city, state, what type of alcohol they serve (and whether they don't), smoking restrictions, dress code, accessibilty, price level, ambience, and the type of area (closed or open) of the restaurants.
+* reviews: Contains the reviews - overall rating, food rating, and service rating - of the restaurants by the users.
+* userCuisine: Contains the preferred cuisines of the users
+* users: Contains the location (longitude and latitude), whether they smoke, the drink level, the dress preference, the ambeince preference, the transportation, the marital status, the birth year, the activity (student, professional, or unemployed), the weight, the budget, and the height of the users.
 
 ## ER Diagram
 
