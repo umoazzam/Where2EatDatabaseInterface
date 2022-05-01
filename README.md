@@ -14,7 +14,7 @@ Despite the complexity of the challenge, bringing together a group of friends at
 
 ## Data Description (Raunak)
 
-We got our data from the Univeristy of California Irvine Machine-Learning repository which we found on Kaggle. The repository got its data from the National Centre for Research and Technological Development CENIDET.
+We got our data from the Univeristy of California Irvine Machine-Learning repository which we found on [Kaggle](https://www.kaggle.com/datasets/uciml/restaurant-data-with-consumer-ratings?select=rating_final.csv). The repository got its data from the National Centre for Research and Technological Development CENIDET.
 
 We wrote python scripts that we ran on the raw data to get the desired data that could be put in our database.
 Our data consists for several csv files namely:
