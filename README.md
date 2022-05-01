@@ -161,7 +161,7 @@ ForeignKey(group_id) references Groups.group_id
 
 This relation keeps track of what users are part of which group. This is a many to many relationship because each group can have multiple users, and each user can be a part of multiple groups.
 
-(RAUNAK) List all other relations
+(RAUNAK) List all other relations and write descriptions for them
 
 ## Example Queries (Sohan + Raunak)
 
