@@ -220,6 +220,12 @@ WHERE c.groupID = 1 AND r.placeID = rc.placeID AND rc.cuisine = c.cuisine_overla
 GROUP BY r.placeID
 ORDER BY (SELECT COUNT(p.purchaseID)) LIMIT 5;
 
+### Relational Algebra
+
+τ COUNT(purchaseid) π r.name, r.address, r.city γ placeid,
+   σ _(c.groupid = 1 AND r.placeid = rc.placeid AND rc.cuisine = c.cuisine_overlap AND c.groupid = gm.groupid AND gm.userid = p.userid)
+    (ρ_(r) restaurant × ρ_(c) community × ρ_(p) purchase × ρ_(rc) rescuisine × ρ_(gm) groupmembers)
+
 ## Query 3: Find the top 5 closest restaurants that fit the budget for every member in the group
 ### SQL
 SELECT r.name, r.address, r.city
@@ -237,7 +243,7 @@ ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 
 ### Relational Algebra
 
-τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
+τ COUNT (cuisine) γ userid π userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
 
 ## Query 5: Find the most frivolous user (user that has spent the most money)
 ### SQL
