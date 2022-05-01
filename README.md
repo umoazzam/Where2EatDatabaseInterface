@@ -196,8 +196,8 @@ This relation keeps track of what users are part of which group. This is a many 
 
 ## Example Queries (Sohan + Raunak)
 
-## Query 1: Find the top 5 restaurants that serve the favorite cuisine of the user
-### SQL
+### Query 1: Find the top 5 restaurants that serve the favorite cuisine of the user
+#### SQL
 ```
 SELECT r.name, r.address, r.city
 FROM restaurant r, rescuisine rc, user u, usercuisine uc, review re
@@ -206,15 +206,15 @@ WHERE u.userID = 'U1006' AND u.userID = uc.userID AND r.placeID = rc.placeID AND
 GROUP BY r.placeID
 ORDER BY (AVG(re.rating))DESC LIMIT 5;
 ```
-### Relational Algebra
+#### Relational Algebra
 ```
 τ AVG (rating) π r . name, r . address, r . city γ placeid,
    σ_(u.userid = "U1006" AND u.userid = uc.userid AND r.placeid = rc.placeid AND uc.cuisine = rc.cuisine AND r.placeid = re.placeid)
     (ρ_(r) restaurant × ρ_(rc) rescuisine × ρ_(u) user × ρ_(uc) usercuisine × ρ_(re) review)
 ```
 
-## Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
-### SQL
+### Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
+#### SQL
 ```
 SELECT r.name, r.address, r.city
 FROM restaurant r, community c, purchase p, rescuisine rc, groupmembers gm
@@ -222,22 +222,22 @@ WHERE c.groupID = 1 AND r.placeID = rc.placeID AND rc.cuisine = c.cuisine_overla
 GROUP BY r.placeID
 ORDER BY (SELECT COUNT(p.purchaseID)) LIMIT 5;
 ```
-### Relational Algebra
+#### Relational Algebra
 ```
 τ COUNT(purchaseid) π r.name, r.address, r.city γ placeid,
    σ _(c.groupid = 1 AND r.placeid = rc.placeid AND rc.cuisine = c.cuisine_overlap AND c.groupid = gm.groupid AND gm.userid = p.userid)
     (ρ_(r) restaurant × ρ_(c) community × ρ_(p) purchase × ρ_(rc) rescuisine × ρ_(gm) groupmembers)
 ```
-## Query 3: Find the top 5 closest restaurants that fit the budget for every member in the group
-### SQL
+### Query 3: Find the top 5 closest restaurants that fit the budget for every member in the group
+#### SQL
 ```
 SELECT r.name, r.address, r.city
 FROM restaurant r, Community c
 WHERE c.groupID = 1 AND c.min_budget >= r.price
 ORDER BY (POW((r.longitude-c.midLong),2) + POW((r.latitude-c.midLat),2)) LIMIT 5;
 ```
-## Query 4: Find the 5 most open-minded user in terms of preferred cuisines
-### SQL
+### Query 4: Find the 5 most open-minded user in terms of preferred cuisines
+#### SQL
 ```
 SELECT u.userID
 FROM user u, usercuisine uc
@@ -245,12 +245,12 @@ WHERE u.userID = uc.userID
 GROUP BY u.userID
 ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 ```
-### Relational Algebra
+#### Relational Algebra
 ```
 τ COUNT (cuisine) γ userid π userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
 ```
-## Query 5: Find the most frivolous user (user that has spent the most money)
-### SQL
+### Query 5: Find the most frivolous user (user that has spent the most money)
+#### SQL
 ```
 SELECT u.userID
 FROM user u, restaurant r, purchase p
@@ -258,7 +258,7 @@ WHERE u.userID = p.userID AND r.placeID = p.placeID
 GROUP BY u.userID
 ORDER BY (SUM(p.cost))DESC LIMIT 1;
 ```
-### Relational Algebra
+#### Relational Algebra
 ```
 τ SUM (cost) γ userid, σ_(u.userid = p.userid AND r.placeid = p.placeid) (ρ_(u) user ×  ρ_(r) restaurant × ρ_(p) purchase)
 ```
@@ -275,7 +275,7 @@ ORDER BY (SUM(p.cost))DESC LIMIT 1;
 * ER Diagram: created diagram of general structure of database, ideated all general tables/schema
 * SQL Database Server/DB Organization: configured MySQL server and created database using MySQLWorkbench (created all tables/connections)
 * Python-MySQL Integration: facilitated connection between Python and MySQL using MySQL Connector
-* Python Interaction Script: wrote script to generate queries and send them to the database server
+* Python Interaction Script: wrote script for user interaction to generate queries and send them to the database server
 * Demo: organized demonstration to TAs for review
 
 ### Sohan Bhawtanker
