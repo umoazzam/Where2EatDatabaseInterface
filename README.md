@@ -25,24 +25,29 @@ userID -> latitude, longitude, smoker, drink_level, dress_preference, ambience, 
 
 latitude, longitude -> userID
 ```
+```
 Community:\
 groupID -> type, min_budget, cuisine_overlap, midLong, midLat
-
+```
+```
 Restaurant:\
 placeID -> latitude, longitude, name, address, city, state, alcohol, smoking_area, dress_code, accessibility, price, Rambience, area
 
 latitude, longitude -> placeID
 
 name, address -> placeID
+```
 
+```
 Purchase:\
 purchaseID -> userID, placeID, cost
-
+```
+```
 Review:\
 reviewID -> userID, placeID, rating, food_rating, service_rating
 
 userID, placeID -> reviewID
-
+```
 
 ## Schemas
 
