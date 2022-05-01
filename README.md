@@ -16,6 +16,8 @@ Despite the complexity of the challenge, bringing together a group of friends at
 
 ## ER Diagram (Usman)
 
+![Diagram](https://github.com/umoazzam/Where2EatDatabaseInterface/blob/main/Diagrams/where2eatdbER.png)
+
 ## Functional Dependencies (Sohan)
 
 ## Schemas
