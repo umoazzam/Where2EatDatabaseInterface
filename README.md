@@ -209,6 +209,7 @@ This relation keeps track of what users are part of which group. This is a many 
 ### Sohan Bhawtanker
 
 * Example SQL Queries
+* Example Relational Algebra Queries
 * Python scripts for CSV/Entity generation
   * Randomized purchase history for each user
   * Calculated locations of groups
