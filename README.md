@@ -243,9 +243,14 @@ ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 ### SQL
 SELECT u.userID
 FROM user u, restaurant r, purchase p
-WHERE u.userID = p.userID AND r.placeID and p.placeID
+WHERE u.userID = p.userID AND r.placeID = p.placeID
 GROUP BY u.userID
 ORDER BY (SUM(p.cost))DESC LIMIT 1;
+
+### Relational Algebra
+
+τ SUM (cost) γ userid, σ_(u.userid = p.userid AND r.placeid = p.placeid) (ρ_(u) user ×  ρ_(r) restaurant × ρ_(p) purchase)
+
 
 ## Implementation (Usman)
 
