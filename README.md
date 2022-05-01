@@ -205,6 +205,10 @@ WHERE u.userID = 'U1006' AND u.userID = uc.userID AND r.placeID = rc.placeID AND
 GROUP BY r.placeID
 ORDER BY (AVG(re.rating))DESC LIMIT 5;
 
+### Relational Algebra
+
+τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ u user ×  ρ uc usercuisine)
+
 ## Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
 ### SQL
 SELECT r.name, r.address, r.city
