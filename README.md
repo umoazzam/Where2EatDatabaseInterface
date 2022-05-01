@@ -197,6 +197,7 @@ This relation keeps track of what users are part of which group. This is a many 
 ## Example Queries (Sohan + Raunak)
 
 ## Query 1: Find the top 5 restaurants that serve the favorite cuisine of the user
+### SQL
 SELECT r.name, r.address, r.city
 FROM restaurant r, rescuisine rc, user u, usercuisine uc, review re
 WHERE u.userID = 'U1006' AND u.userID = uc.userID AND r.placeID = rc.placeID AND uc.cuisine = rc.cuisine 
@@ -205,6 +206,7 @@ GROUP BY r.placeID
 ORDER BY (AVG(re.rating))DESC LIMIT 5;
 
 ## Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
+### SQL
 SELECT r.name, r.address, r.city
 FROM restaurant r, community c, purchase p, rescuisine rc, groupmembers gm
 WHERE c.groupID = 1 AND r.placeID = rc.placeID AND rc.cuisine = c.cuisine_overlap AND c.groupID = gm.groupID AND gm.userID = p.userID
@@ -212,12 +214,14 @@ GROUP BY r.placeID
 ORDER BY (SELECT COUNT(p.purchaseID)) LIMIT 5;
 
 ## Query 3: Find the top 5 closest restaurants that fit the budget for every member in the group
+### SQL
 SELECT r.name, r.address, r.city
 FROM restaurant r, Community c
 WHERE c.groupID = 1 AND c.min_budget >= r.price
 ORDER BY (POW((r.longitude-c.midLong),2) + POW((r.latitude-c.midLat),2)) LIMIT 5;
 
 ## Query 4: Find the 5 most open-minded user in terms of preferred cuisines
+### SQL
 SELECT u.userID
 FROM user u, usercuisine uc
 WHERE u.userID = uc.userID
@@ -225,6 +229,7 @@ GROUP BY u.userID
 ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 
 ## Query 5: Find the most frivolous user (user that has spent the most money)
+### SQL
 SELECT u.userID
 FROM user u, restaurant r, purchase p
 WHERE u.userID = p.userID AND r.placeID and p.placeID
