@@ -14,7 +14,7 @@ Despite the complexity of the challenge, bringing together a group of friends at
 
 ## Data Description (Raunak)
 
-## ER Diagram (Usman)
+## ER Diagram
 
 ![Diagram](https://github.com/umoazzam/Where2EatDatabaseInterface/blob/main/Diagrams/where2eatdbER.png)
 
@@ -263,7 +263,15 @@ ORDER BY (SUM(p.cost))DESC LIMIT 1;
 τ SUM (cost) γ userid, σ_(u.userid = p.userid AND r.placeid = p.placeid) (ρ_(u) user ×  ρ_(r) restaurant × ρ_(p) purchase)
 ```
 
-## Implementation (Usman)
+## Implementation
+
+### Database
+
+This database and its corresponding ER diagram were generated using MySQLWorkbench and hosted on a MySQL server. The files for the server/DB can be found in the *Server:Database* directory.
+
+### User Interface
+
+The user interface for the database was created using a Python script titled *where2eatconnection.py*. This interface is a tool with which the user can connect with the database and send queries about its contents. This includes choosing from the 5 sample queries listed above and receiving the appropriate response or entering in a valid SQL query of their own. Overall, the user interface empowers the user to seek information about other users, groups and restaurants as well as which restaurants best correlate with users’ solo and group dining preferences. The output from the demonstration of this tool can be found in the *Output* directory in both text and png format.
 
 ## Team Contributions
 
