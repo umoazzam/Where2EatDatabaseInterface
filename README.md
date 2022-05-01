@@ -228,6 +228,10 @@ WHERE u.userID = uc.userID
 GROUP BY u.userID
 ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 
+### Relational Algebra
+
+τ COUNT (cuisine) γ userid, σ_(u . userid = uc . userid) (ρ u user × ρ uc usercuisine)
+
 ## Query 5: Find the most frivolous user (user that has spent the most money)
 ### SQL
 SELECT u.userID
