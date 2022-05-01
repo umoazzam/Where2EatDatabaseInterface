@@ -295,3 +295,7 @@ ORDER BY (SUM(p.cost))DESC LIMIT 1;
 * Example SQL Queries
 * Python scripts for CSV/Entity generation
 * Add more here
+
+## What we learned
+
+This was the first time any of us have endeavored to create a database project this large, so this assignment posed an extremely valuable learning experience for us. Throughout the semester working on the project, we got the opportunity to expand on our project management/development skills, communication skills, and presentation skills. We also learned a lot about database management and generation and how it differs in application from what we learn about databases conceptually. An example of this was how list variables in csvs can be expressed; we originally believed there was some list type that could be used to store a list in a specific varibale for each observation, but found while creating the database that no such type existed. This meant we had to add in new entity tables to attach entities to corresponding list variables, which is where our usercuisines, rescuisines, and groupmembers tables came from. Overall, this assignment was extremely valuable for us as it gave us the chance to apply our databases knowledge and develop a cool academic project which would have use in real applications.
