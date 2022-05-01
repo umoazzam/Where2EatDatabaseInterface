@@ -207,7 +207,7 @@ ORDER BY (AVG(re.rating))DESC LIMIT 5;
 
 ### Relational Algebra
 
-τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ u user ×  ρ uc usercuisine)
+τ COUNT (cuisine) γ userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
 
 ## Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
 ### SQL
