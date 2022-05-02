@@ -1,4 +1,4 @@
-Last login: Sun May  1 12:05:31 on ttys000
+Last login: Sun May  1 18:35:55 on ttys000
 umoazzam@Usmans-MacBook-Pro ~ % python3 -u "/Users/umoazzam/Library/CloudStorage/OneDrive-Personal/Documents/4th Year CWRU/CSDS 341 Intro to Databases/Final Project/Where2EatDatabaseInterface/Where2EatDatabaseInterface/where2eatconnection.py"
 
 Welcome to the Where2Eat Database Interface!
@@ -16,6 +16,8 @@ Please enter any of the values below to specify an action.
 4: Submit command 4 -  Find the 5 most open-minded user in terms of preferred cuisines
 
 5: Submit command 5 -  Find the most frivolous user (user that has spent the most money)
+
+5: Submit command 6 -  Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
 
 C: Submit a custom query
 
@@ -57,6 +59,8 @@ Please enter any of the values below to specify an action.
 
 5: Submit command 5 -  Find the most frivolous user (user that has spent the most money)
 
+5: Submit command 6 -  Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+
 C: Submit a custom query
 
 E: Exit
@@ -97,6 +101,47 @@ Please enter any of the values below to specify an action.
 
 5: Submit command 5 -  Find the most frivolous user (user that has spent the most money)
 
+5: Submit command 6 -  Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+
+C: Submit a custom query
+
+E: Exit
+
+6
+Connected to MySQL Server version  8.0.28
+You're connected to database:  ('where2eat',)
+
+Command:  Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+
+Query:  SELECT r.name FROM restaurant r WHERE r.price = 1 AND r.dress_code = 'informal' AND r.alcohol = 'Wine-Beer' AND r.accessibility = 'completely' 
+
+('Unicols Pizza',)
+('emilianos',)
+
+Query completed!
+
+MySQL connection is closed
+
+Would you like to continue? Y/N:
+Y
+
+-------------------------------------------------------
+
+What would you like to do? 
+Please enter any of the values below to specify an action.
+
+1: Submit command 1 -  Find the top 5 restaurants that serve the favorite cuisine of the user
+
+2: Submit command 2 -  Find the least-encountered (newer) restaurants for a group based on their preference
+
+3: Submit command 3 -  Find the top 5 closest restaurants that fit the budget for every member in the group
+
+4: Submit command 4 -  Find the 5 most open-minded user in terms of preferred cuisines
+
+5: Submit command 5 -  Find the most frivolous user (user that has spent the most money)
+
+5: Submit command 6 -  Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+
 C: Submit a custom query
 
 E: Exit
@@ -132,3 +177,4 @@ N
 -------------------------------------------------------
 
 You have chosen to exit the program. Thanks for trying out the Where2Eat database!
+umoazzam@Usmans-MacBook-Pro ~ % 

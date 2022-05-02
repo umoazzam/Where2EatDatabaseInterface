@@ -17,6 +17,9 @@ query4 = "SELECT u.userID FROM user u, usercuisine uc WHERE u.userID = uc.userID
 command5 = "Find the most frivolous user (user that has spent the most money)\n"
 query5 = "SELECT u.userID FROM user u, restaurant r, purchase p WHERE u.userID = p.userID AND r.placeID and p.placeID GROUP BY u.userID ORDER BY (SUM(p.cost))DESC LIMIT 1;"
 
+command6 = "Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code\n"
+query6 = "SELECT r.name FROM restaurant r WHERE r.price = 1 AND r.dress_code = 'informal' AND r.alcohol = 'Wine-Beer' AND r.accessibility = 'completely'"
+
 # Method for connecting to database
 def get_query(query, command):
     try:
@@ -57,6 +60,7 @@ while not finished:
     print("3: Submit command 3 - ", command3)
     print("4: Submit command 4 - ", command4)
     print("5: Submit command 5 - ", command5)
+    print("6: Submit command 6 - ", command6)
     print("C: Submit a custom query\n")
     print("E: Exit\n")
 
@@ -87,6 +91,12 @@ while not finished:
             finished = True
     elif response == "5":
         get_query(query5, command5)
+        print("Would you like to continue? Y/N:")
+        exit_response = input()
+        if exit_response == "N":
+            finished = True
+    elif response == "6":
+        get_query(query6, command6)
         print("Would you like to continue? Y/N:")
         exit_response = input()
         if exit_response == "N":

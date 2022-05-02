@@ -32,3 +32,8 @@ FROM user u, restaurant r, purchase p
 WHERE u.userID = p.userID AND r.placeID and p.placeID
 GROUP BY u.userID
 ORDER BY (SUM(p.cost))DESC LIMIT 1;
+
+# Query 6: Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+SELECT r.name
+FROM restaurant r
+WHERE r.price = 1 AND r.dress_code = "informal" AND r.alcohol = "Wine-Beer" AND r.accessibility = "completely"
