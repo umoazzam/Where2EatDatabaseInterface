@@ -12,7 +12,7 @@ Indecision amongst friends on where to eat is an age-old adage that plagues most
 
 Despite the complexity of the challenge, bringing together a group of friends at a dining location befitting all of their tastes, budgets and locations becomes easier with the use of a database. The Where2Eat database compiles information about user/group dining profiles, essential information about restaurants, and previous reviews/purchases made. The database also empowers users by allowing them to make queries to find restaurants that best fit their solo tastes as well as their groups' dining preferences. Overall, this system should assist its users and groups in exploring the dining experiences in their area without the risk of restaurants failing to meet their needs, as well as helping them make the essential yet impossible decision: where to eat?
 
-## Data Description (Raunak)
+## Data Description
 
 We got our data from the Univeristy of California Irvine Machine-Learning repository which we found on [Kaggle](https://www.kaggle.com/datasets/uciml/restaurant-data-with-consumer-ratings?select=rating_final.csv). The repository got its data from the National Centre for Research and Technological Development CENIDET.
 
@@ -32,7 +32,7 @@ Our data consists for several csv files namely:
 
 ![Diagram](https://github.com/umoazzam/Where2EatDatabaseInterface/blob/main/Diagrams/where2eatdbER.png)
 
-## Functional Dependencies (Sohan)
+## Functional Dependencies
 ```
 User:\
 userID -> latitude, longitude, smoker, drink_level, dress_preference, ambience, transport, marital_status, birth_year, activity, weight, budget, height
@@ -65,7 +65,7 @@ userID, placeID -> reviewID
 
 ## Schemas
 
-### Entities (Sohan)
+### Entities
 
 #### User
 ```
@@ -195,7 +195,7 @@ ForeignKey(groupID) references Community.groupID
 
 This weak entity stores every member inside a group/community. 
 
-### Relations (Raunak)
+### Relations
 
 ```
 Member_of(user_id, group_id)
@@ -206,9 +206,11 @@ ForeignKey(group_id) references Groups.group_id
 
 This relation keeps track of what users are part of which group. This is a many to many relationship because each group can have multiple users, and each user can be a part of multiple groups.
 
-(RAUNAK) List all other relations and write descriptions for them
 
-## Example Queries (Sohan + Raunak)
+## Example Queries
+
+5 out of our 6 queries could not be translated into RA and TRC due to the incompatibility of those formats with aggregate functions.
+Our 6th query is written in all formats - SQL, RA, TRC.
 
 ### Query 1: Find the top 5 restaurants that serve the favorite cuisine of the user
 #### SQL
@@ -220,12 +222,6 @@ WHERE u.userID = 'U1006' AND u.userID = uc.userID AND r.placeID = rc.placeID AND
 GROUP BY r.placeID
 ORDER BY (AVG(re.rating))DESC LIMIT 5;
 ```
-#### Relational Algebra
-```
-τ AVG (rating) π r . name, r . address, r . city γ placeid,
-   σ_(u.userid = "U1006" AND u.userid = uc.userid AND r.placeid = rc.placeid AND uc.cuisine = rc.cuisine AND r.placeid = re.placeid)
-    (ρ_(r) restaurant × ρ_(rc) rescuisine × ρ_(u) user × ρ_(uc) usercuisine × ρ_(re) review)
-```
 
 ### Query 2: Find the least-encountered (newer) restaurants for a group based on their preference
 #### SQL
@@ -236,12 +232,7 @@ WHERE c.groupID = 1 AND r.placeID = rc.placeID AND rc.cuisine = c.cuisine_overla
 GROUP BY r.placeID
 ORDER BY (SELECT COUNT(p.purchaseID)) LIMIT 5;
 ```
-#### Relational Algebra
-```
-τ COUNT(purchaseid) π r.name, r.address, r.city γ placeid,
-   σ _(c.groupid = 1 AND r.placeid = rc.placeid AND rc.cuisine = c.cuisine_overlap AND c.groupid = gm.groupid AND gm.userid = p.userid)
-    (ρ_(r) restaurant × ρ_(c) community × ρ_(p) purchase × ρ_(rc) rescuisine × ρ_(gm) groupmembers)
-```
+
 ### Query 3: Find the top 5 closest restaurants that fit the budget for every member in the group
 #### SQL
 ```
@@ -259,10 +250,7 @@ WHERE u.userID = uc.userID
 GROUP BY u.userID
 ORDER BY (COUNT(uc.cuisine))DESC LIMIT 5;
 ```
-#### Relational Algebra
-```
-τ COUNT (cuisine) γ userid π userid, σ_(u.userid = uc.userid)(ρ_ (u) user ×  ρ_(uc) usercuisine)
-```
+
 ### Query 5: Find the most frivolous user (user that has spent the most money)
 #### SQL
 ```
@@ -272,9 +260,22 @@ WHERE u.userID = p.userID AND r.placeID = p.placeID
 GROUP BY u.userID
 ORDER BY (SUM(p.cost))DESC LIMIT 1;
 ```
-#### Relational Algebra
+
+### Query 6: Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+#### SQL
 ```
-τ SUM (cost) γ userid, σ_(u.userid = p.userid AND r.placeid = p.placeid) (ρ_(u) user ×  ρ_(r) restaurant × ρ_(p) purchase)
+SELECT r.name
+FROM restaurant r
+WHERE r.price = 1 AND r.dress_code = "informal" AND r.alcohol = "Wine-Beer" AND r.accessibility = "completely"
+```
+
+#### TRC
+```
+{t|(∃r) (r ∈ restaurant) (t[name] = r[name] ∧ r[price] = 1 ∧ r[dress_code] = "informal" ∧ r[alcohol] = "Wine-Beer" ∧ r[accessibility] = "completely"}
+```
+#### RA
+```
+Π_name(σ_(price=1∧dress_code ="informal"∧alcohol="Wine-Beer"∧accessibility="completely") (restaurant))
 ```
 
 ## Implementation
@@ -316,7 +317,8 @@ The user interface for the database was created using a Python script titled *wh
 
 * Example SQL Queries
 * Python scripts for CSV/Entity generation
-* Add more here
+* Writing the RA and TRC
+* Writing the Data Description
 
 ## What we learned
 
