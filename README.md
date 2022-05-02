@@ -316,7 +316,7 @@ The user interface for the database was created using a Python script titled *wh
 
 * Example SQL Queries
 * Python scripts for CSV/Entity generation
-* Add more here
+* Writing the Data Description for the Final Report
 
 ## What we learned
 
