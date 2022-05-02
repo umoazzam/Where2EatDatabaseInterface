@@ -16,7 +16,8 @@ Despite the complexity of the challenge, bringing together a group of friends at
 
 We got our data from the Univeristy of California Irvine Machine-Learning repository which we found on [Kaggle](https://www.kaggle.com/datasets/uciml/restaurant-data-with-consumer-ratings?select=rating_final.csv). The repository got its data from the National Centre for Research and Technological Development CENIDET.
 
-We wrote python scripts that we ran on the raw data to get the desired data that could be put in our database.
+We wrote python scripts that we ran on the raw data to get the desired data that could be put in our database. For example, we randomly generated the purchase history for each user and randomly created groups from the user data set (for which we had to then calculate the type (family, friends, or undecided), the minimum budget, and the cuisine overlap for each group).
+
 Our data consists for several csv files namely:
 
 * groupMembers: Contains the userID of the members of all the groups.
@@ -206,6 +207,8 @@ ForeignKey(group_id) references Groups.group_id
 
 This relation keeps track of what users are part of which group. This is a many to many relationship because each group can have multiple users, and each user can be a part of multiple groups.
 
+All of our other relations are weak relations and thus have not been listed here to prevent any redundancy.
+
 
 ## Example Queries
 
@@ -315,10 +318,14 @@ The user interface for the database was created using a Python script titled *wh
 
 ### Raunak Bhimsaria
 
-* Example SQL Queries
-* Python scripts for CSV/Entity generation
-* Writing the RA and TRC
-* Writing the Data Description
+* Example SQL Queries.
+* Python scripts for CSV/Entity generation:
+  * Generated random groups from the user dataset.
+  * Calculated the type (family, friends, or undecided), the minimum budget, and the cuisine overlap for the groups.
+  * Removed unwanted columns from the user and restaurant data set.
+  * Merged csv files into one to facilitate moving data into database.
+* Writing the Relational Algebra and Tuple Relational Calculus.
+* Writing the Data Description.
 
 ## What we learned
 
