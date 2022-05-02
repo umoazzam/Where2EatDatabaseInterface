@@ -283,9 +283,9 @@ WHERE r.price = 1 AND r.dress_code = "informal" AND r.alcohol = "Wine-Beer" AND 
 
 ## Implementation
 
-### Database
+### Database/Server
 
-This database and its corresponding ER diagram were generated using MySQLWorkbench and hosted on a MySQL server. The files for the server/DB can be found in the *Server:Database* directory.
+This database and its corresponding ER diagram were generated using MySQLWorkbench and hosted on a MySQL server. The files for the server/DB can be found in the *Server and Database* directory. 
 
 ### User Interface
 
