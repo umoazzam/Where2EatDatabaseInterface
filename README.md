@@ -264,7 +264,7 @@ GROUP BY u.userID
 ORDER BY (SUM(p.cost))DESC LIMIT 1;
 ```
 
-### Query 6: Find all the restaurants that serve wine, are wheelchair accessable, have a low price budget, and have an informal dress-code
+### Query 6: Find all the restaurants that serve wine, are wheelchair accessible, have a low price budget, and have an informal dress-code
 #### SQL
 ```
 SELECT r.name
