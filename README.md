@@ -323,7 +323,7 @@ The user interface for the database was created using a Python script titled *wh
   * Generated random groups from the user dataset.
   * Calculated the type (family, friends, or undecided), the minimum budget, and the cuisine overlap for the groups.
   * Removed unwanted columns from the user and restaurant data set.
-  * Merged csv files into one to facilitate moving data into database.
+  * Merged csv files to facilitate moving data into database.
 * Writing the Relational Algebra and Tuple Relational Calculus.
 * Writing the Data Description.
 
