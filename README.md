@@ -12,7 +12,7 @@ Indecision amongst friends on where to eat is an age-old adage that plagues most
 
 Despite the complexity of the challenge, bringing together a group of friends at a dining location befitting all of their tastes, budgets and locations becomes easier with the use of a database. The Where2Eat database compiles information about user/group dining profiles, essential information about restaurants, and previous reviews/purchases made. The database also empowers users by allowing them to make queries to find restaurants that best fit their solo tastes as well as their groups' dining preferences. Overall, this system should assist its users and groups in exploring the dining experiences in their area without the risk of restaurants failing to meet their needs, as well as helping them make the essential yet impossible decision: where to eat?
 
-## Data Description (Raunak)
+## Data Description
 
 We got our data from the Univeristy of California Irvine Machine-Learning repository which we found on [Kaggle](https://www.kaggle.com/datasets/uciml/restaurant-data-with-consumer-ratings?select=rating_final.csv). The repository got its data from the National Centre for Research and Technological Development CENIDET.
 
@@ -32,7 +32,7 @@ Our data consists for several csv files namely:
 
 ![Diagram](https://github.com/umoazzam/Where2EatDatabaseInterface/blob/main/Diagrams/where2eatdbER.png)
 
-## Functional Dependencies (Sohan)
+## Functional Dependencies
 ```
 User:\
 userID -> latitude, longitude, smoker, drink_level, dress_preference, ambience, transport, marital_status, birth_year, activity, weight, budget, height
@@ -65,7 +65,7 @@ userID, placeID -> reviewID
 
 ## Schemas
 
-### Entities (Sohan)
+### Entities
 
 #### User
 ```
@@ -195,7 +195,7 @@ ForeignKey(groupID) references Community.groupID
 
 This weak entity stores every member inside a group/community. 
 
-### Relations (Raunak)
+### Relations
 
 ```
 Member_of(user_id, group_id)
@@ -206,9 +206,8 @@ ForeignKey(group_id) references Groups.group_id
 
 This relation keeps track of what users are part of which group. This is a many to many relationship because each group can have multiple users, and each user can be a part of multiple groups.
 
-(RAUNAK) List all other relations and write descriptions for them
 
-## Example Queries (Sohan + Raunak)
+## Example Queries
 
 5 out of our 6 queries could not be translated into RA and TRC due to the incompatibility of those formats with aggregate functions.
 Our 6th query is written in all formats - SQL, RA, TRC.
